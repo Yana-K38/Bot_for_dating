@@ -8,11 +8,11 @@ def hello_handler(bot, message):
     keyboard.add(types.KeyboardButton(
         'Фото из старшей школы'), types.KeyboardButton('Последнее селфи'))
     keyboard.add(types.KeyboardButton('Мое увлечение'))
-    welcome_text = (f"Привет, {message.from_user.first_name}!"
+    welcome_text = (f"Привет, {message.from_user.first_name}! "
                     "Давай познакомимся поближе! Выбери, что тебе интересно:")
     bot.send_message(message.chat.id, welcome_text, reply_markup=keyboard)
     bot.send_message(message.chat.id,
-                     f"{message.from_user.first_name} "
+                     f"{message.from_user.first_name}, "
                      "ты можешь посмотреть мои фотографии:")
     bot.send_message(message.chat.id,
                      "Для просмотра информации обо мне, напиши /about_me!")
@@ -62,7 +62,7 @@ def unknown_command_handler(bot, message):
         menu_handler(bot, message)
     else:
         bot.reply_to(message, "Я не знаю такой команды. "
-                              "Пожалуйста, воспользуйтесь /help"
+                              "Пожалуйста, воспользуйтесь /help "
                               "для получения списка доступных команд.")
 
 
